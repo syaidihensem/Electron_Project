@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dictionary App</title>
+
+  <style>
+    header {
+      background-color: #291145;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1em;
+      margin-bottom: 25px;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Verdana, sans-serif;
+      color: #291145;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    footer {
+      background-color: #291145;
+      color: #DBE6AC;
+      padding: 10px;
+      text-align: center;
+      margin-top: auto;
+    }
+
+    a {
+      text-decoration: none;
+      color: #DBE6AC;
+      display: flex;
+      align-items: center;
+      font-size: x-large;
+      padding: 10px 8px;
+      text-decoration: none;
+    }
+
+    a:link, a:visited {
+      background-color: #291145;
+      color: #DBE6AC;
+      padding: 10px 8px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      border-radius: 12px;
+    }
+
+    span {
+      color: #DBE6AC;
+      background-color: #291145;
+      padding: 1%;
+    }
+
+    .search {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      color: #DBE6AC;
+      background-color: #291145;
+      border: 1px solid #291145;
+      padding: 10px;
+      border-radius: 5px;
+      margin: 10px auto;
+      max-width: 400px;
+    }
+
+    input, .search button, select {
+      margin: 10px 5px;
+      color: #291145;
+      background-color: #DBE6AC;
+      padding: 7.5px;
+    }
+
+    button{
+      margin: 10px 5px;
+      color: #DBE6AC;
+      background-color: #291145;
+      padding: 7.5px;
+    }
+
+    .container {
+      margin: 0 auto;
+      padding: 0 15px;
+      max-width: 800px;
+      width: 100%;
+      flex-grow: 1;
+    }
+
+    .entry, .meanings {
+      margin-bottom: 20px;
+      padding: 10px;
+      color: #291145;
+      border: 1px solid #291145;
+      background-color: #291145;
+      border-radius: 5px;
+    }
+
+    .meanings {
+      background-color: #DBE6AC;
+    }
+
+    .word-info {
+      margin-bottom: 10px;
+      padding: 10px;
+      color: #291145;
+      border: 1px solid #291145;
+      background-color: #DBE6AC;
+      border-radius: 5px;
+    }
+
+    .word-info h2 {
+      color: #291145;
+      font-size: 24px;
+      margin-bottom: 5px;
+    }
+
+    .word-info .phonetic {
+      color: #291145;
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    .word-info audio {
+      margin-top: 5px;
+    }
+
+    .meanings h3 {
+      color: #291145;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .definitions, .examples, .synonyms, .antonyms {
+      margin-bottom: 10px;
+    }
+
+    .definitions h4, .examples h4, .synonyms h4, .antonyms h4 {
+      color: #291145;
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    .definitions p, .examples p, .synonyms p, .antonyms p {
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body background="bg1.jpg">
+  <header>
+    <a href="index.html">Home</a>
+    <a href="favorites.html">Favorites</a>
+  </header>
+
+  <div class="container">
+    <div class="search">
+      <input type="text" id="word" placeholder="Enter a word" />
+      <select id="type">
+        <option value="">All</option>
+        <option value="noun">Noun</option>
+        <option value="pronoun">Pronoun</option>
+        <option value="adjective">Adjective</option>
+        <option value="verb">Verb</option>
+        <option value="adverb">Adverb</option>
+        <option value="preposition">Preposition</option>
+        <option value="conjunction">Conjunction</option>
+        <option value="interjections">Interjections</option>
+      </select>
+      <button onclick="searchWord()">Search</button>
+    </div>
+
+    <main style="padding-top: 25px;">
+      <div class="entry" id="entryContainer" style="color: #DBE6AC; line-height: 1.8; font-size: 20px;">
+        Welcome to WordWise, your ultimate companion for exploring the vast world of words! Our dictionary application is designed to make language learning and vocabulary building a breeze. 
+        Whether you're a student, writer, or language enthusiast, WordWise offers comprehensive definitions, examples, and synonyms at your fingertips. 
+        With features like part of speech filtering, a favorites list for saving your most cherished words, and the ability to add personal remarks, WordWise transforms the way you interact with words. 
+        Dive in and discover the richness of language with WordWise!
+      </div>
+    </main>
+  </div>
+
+  <footer>
+    <h4>&copy; 2024 JR WordWise. All rights reserved.</h4>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
